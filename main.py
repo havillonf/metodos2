@@ -31,15 +31,17 @@ def iterar(metodo, fx, a, b, erro):
 
     resultado = None
     resultado_atual = None
+    iteracoes = 0
 
     while erro_atual > erro:
         resultado = resultado_atual
-        resultado_atual, iteracoes = 0, 0
+        resultado_atual = 0
 
         h = (b - a) / particoes
         for i in range(particoes):
             resultado_atual += metodo(fx, a + h*i, a + h*(i + 1))
-            iteracoes += 1
+            
+        iteracoes += 1
 
         if resultado != None:
             erro_atual = abs(resultado - resultado_atual)
