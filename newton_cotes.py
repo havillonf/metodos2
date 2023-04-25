@@ -1,11 +1,11 @@
 #--------------fechadas--------------
 
-def grau_1_fechada(fx, a, b):
+def grau_1_fechada(fx, a, b, n):
   f0 = fx(a)
   f1 = fx(b)
   return ((b - a) / 2) * (f0 + f1)
 
-def grau_2_fechada(fx, a, b):
+def grau_2_fechada(fx, a, b, x):
   dx = (b - a)
   h = dx / 2
 
@@ -15,7 +15,7 @@ def grau_2_fechada(fx, a, b):
 
   return (dx / 6) * (f0 + 4*f1 + f2)
 
-def grau_3_fechada(fx, a, b):
+def grau_3_fechada(fx, a, b, x):
   dx = (b - a)
   h = dx / 3
 
@@ -27,7 +27,7 @@ def grau_3_fechada(fx, a, b):
   result = (dx / 8) * (f0 + 3*f1 + 3*f2 + f3)
   return result
 
-def grau_4_fechada(fx, a, b):
+def grau_4_fechada(fx, a, b, x):
   dx = (b - a)
   h = dx / 4
 
@@ -42,7 +42,7 @@ def grau_4_fechada(fx, a, b):
 
 #--------------abertas--------------
 
-def grau_1_aberta(fx, a, b):
+def grau_1_aberta(fx, a, b, x):
   dx = (b - a)
   h = dx / 3
 
@@ -51,7 +51,7 @@ def grau_1_aberta(fx, a, b):
 
   return (dx / 2) * (f0 + f1)
   
-def grau_2_aberta(fx, a, b):
+def grau_2_aberta(fx, a, b, x):
   dx = (b - a)
   h = dx / 4
 
@@ -61,7 +61,7 @@ def grau_2_aberta(fx, a, b):
 
   return (dx / 3) * (2*f0 - f1 + 2*f2)
 
-def grau_3_aberta(fx, a, b):
+def grau_3_aberta(fx, a, b, x):
   dx = (b - a)
   h = dx / 5
 
@@ -72,7 +72,7 @@ def grau_3_aberta(fx, a, b):
 
   return (dx / 24) * (11*f0 + f1 + f2 + 11*f3)
 
-def grau_4_aberta(fx, a, b):
+def grau_4_aberta(fx, a, b, x):
   dx = (b - a)
   h = dx / 6
 
